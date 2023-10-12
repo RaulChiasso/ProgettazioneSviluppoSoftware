@@ -1,0 +1,13 @@
+compilazione con javac:
+javac -d bin .\src\main\java\it\unibo\arrays\MyCircularArray.java
+
+esecuzione:
+cd ./bin/
+java it.unibo.arrays.MyCircularArray 
+
+compilazione con Gradle:
+.\gradlew.bat compileJava
+
+esecuzione:
+ cd .\build\classes\java\main\
+ java it.unibo.arrays.MyCircularArray 
