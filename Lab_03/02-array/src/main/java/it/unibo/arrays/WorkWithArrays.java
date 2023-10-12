@@ -58,11 +58,39 @@ class WorkWithArrays {
     }
 
     static int[] sortArray(final int[] array, final boolean isDescending) {
-        return array;
+        int i=0, j=0, temp;
+        boolean swapped;
+        for (; i < array.length - 1; i++) {
+            swapped = false;
+            for (j=0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) break;
+        }
+
+        if(!isDescending){
+            return array;
+        }else{
+            for (int low = 0, high = array.length - 1; low < high; low++, high--) {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }        
     }
 
     static double computeVariance(final int[] array) {
-        return 0;
+        double m = Arrays.stream(array).average().getAsDouble();
+        double sommaScartiQuad = 0;
+        for(int i=0; i<array.length; i++)
+            sommaScartiQuad += (array[i]-m)*(array[i]-m);
+        return sommaScartiQuad/array.length;
     }
 
     static int[] revertUpTo(final int[] array, final int element) {
