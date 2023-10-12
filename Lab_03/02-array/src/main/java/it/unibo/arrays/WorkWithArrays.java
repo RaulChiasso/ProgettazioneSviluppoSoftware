@@ -66,7 +66,18 @@ class WorkWithArrays {
     }
 
     static int[] revertUpTo(final int[] array, final int element) {
-        return null;
+        int i=0;
+        int j=0;
+        int[] result= new int[array.length];
+        for(; i<array.length && array[i]!=element; i++);
+        for (; i>=0;i--){
+            result[j]=array[i];
+            j++;
+        }
+        for (; j<array.length;j++){
+            result[j]=array[j];
+        }
+        return result;
     }
 
     static int[] duplicateElements(final int[] array, final int times) {
